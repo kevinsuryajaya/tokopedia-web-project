@@ -1,0 +1,165 @@
+nav {
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 9;
+}
+
+nav {
+  background: rgb(3 172 14);
+  width: 100%;
+  height: 3.25rem;
+  transition: height 0.5s ease-in-out;
+}
+
+.navigation {
+  margin: 0rem 0.5rem 0rem 0.5rem;
+}
+.nav-brand,
+.navbar-link,
+.nav-collapse,
+.nav-dropdown {
+  display: inline-block;
+}
+.nav-brand,
+.navbar-link {
+  color: #fff;
+  line-height: 3rem;
+  cursor: pointer;
+}
+.nav-brand {
+  font-size: 1.25rem;
+}
+.navbar-link {
+  font-size: 1rem;
+}
+.nav-collapse {
+  float: right;
+}
+.toggler {
+  float: left;
+  width: 2rem;
+  height: 1rem;
+  margin: 1.25rem 0rem 1rem 0rem;
+  background: none;
+  border: none;
+  outline: none;
+  display: none;
+  opacity: 0.8;
+  padding: 0rem 0.3rem 0.5rem 0.3rem;
+}
+.toggler span {
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.25s ease-in-out;
+}
+.toggler span:nth-child(1) {
+  top: -0.4rem;
+}
+.toggler span:nth-child(2) {
+  top: 0;
+}
+.toggler span:nth-child(3) {
+  top: 0.3rem;
+}
+
+.nav-brand:hover,
+.navbar-link:hover,
+.toggler:hover,
+.nav-brand:focus,
+.navbar-link:focus,
+.toggler:focus {
+  opacity: 1;
+}
+
+nav.open .toggler span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+nav.open .toggler span:nth-child(2) {
+  transform: translateX(-100%);
+  width: 0;
+  opacity: 0;
+}
+nav.open .toggler span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+nav.open {
+  height: 100vh;
+}
+
+.input-search {
+  margin-left: 1rem;
+  border: 0px;
+  border-radius: 10px;
+  padding: 7px 7px 7px 25px;
+  width: 50%;
+}
+
+.search-feature {
+  display: inline;
+}
+
+.icon {
+  position: absolute;
+  color: rgba(128, 128, 128, 0.452);
+  text-align: center;
+  margin: 16px 10px 10px 20px;
+}
+
+.icon-section {
+  display: inline-block;
+}
+
+.ui-icon {
+  color: #ffffff;
+  font-size: 25px;
+  margin-left: 1.5rem;
+}
+
+.avatar {
+  object-fit: cover;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.navbar-link a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media (max-width: 1095px) {
+  .nav-collapse,
+  .navbar-link {
+    float: none;
+    display: block;
+  }
+  .navbar-link {
+    text-align: left;
+    margin: 1.5rem 0rem 0rem 0.5rem;
+  }
+  .toggler {
+    display: block;
+  }
+  nav {
+    overflow: hidden;
+  }
+  .nav-brand {
+    display: none;
+  }
+  .input-search {
+    margin: 0.4rem 0rem 0rem 0.5rem;
+  }
+  .icon {
+    margin: 15px 10px 10px 12px;
+  }
+}
