@@ -15,13 +15,13 @@ export default function NavigationBar() {
           </Link>
           {/* This is only for better UI */}
           <div className="search-feature">
-            <i class="fa fa-search icon" aria-hidden="true"></i>
+            <i className="fa fa-search icon" aria-hidden="true"></i>
             <input className="input-search" placeholder="Find Pokemon" />
           </div>
           <div className="icon-section">
-            <i class="fa fa-heart ui-icon" aria-hidden="true"></i>
-            <i class="fa fa-envelope ui-icon" aria-hidden="true"></i>
-            <i class="fa fa-bell ui-icon" aria-hidden="true"></i>
+            <i className="fa fa-heart ui-icon" aria-hidden="true"></i>
+            <i className="fa fa-envelope ui-icon" aria-hidden="true"></i>
+            <i className="fa fa-bell ui-icon" aria-hidden="true"></i>
           </div>
           {/* // */}
           <button className="toggler" onClick={() => setToggle(!toggle)}>
@@ -32,7 +32,7 @@ export default function NavigationBar() {
           <div className="nav-collapse">
             <span className="navbar-link">
               <Link to="/user">
-                <img src={test} alt="Avatar" class="avatar" />
+                <img src={test} alt="Avatar" className="avatar" />
                 <span onClick={() => setToggle(false)}>Kevin Suryajaya</span>
               </Link>
             </span>
