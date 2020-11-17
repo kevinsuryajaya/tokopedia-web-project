@@ -32,8 +32,10 @@ export default function NavigationBar() {
           <div className="nav-collapse">
             <span className="navbar-link">
               <Link to="/user">
+                <div onClick={() => setToggle(false)}>
                 <img src={test} alt="Avatar" className="avatar" />
-                <span onClick={() => setToggle(false)}>Kevin Suryajaya</span>
+                <span>Kevin Suryajaya</span>
+                </div>
               </Link>
             </span>
           </div>
