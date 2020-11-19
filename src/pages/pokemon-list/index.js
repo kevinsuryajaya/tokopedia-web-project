@@ -12,13 +12,13 @@ export default function PokemonList() {
   React.useEffect(() => {
     async function fetchData() {
       let response = await getAllData(sourceUrl);
-      let pokemon = await loadingData(response.results);
+      await loadingData(response.results);
       setLoading(false);
     }
     fetchData();
   }, []);
 
-  const myFunction = async () => {
+  const handleClick = async () => {
     let data = await getAllData(sourceUrl);
     await loadingData(data.results);
   };
@@ -34,7 +34,6 @@ export default function PokemonList() {
     setCounter(counter + 10);
   };
 
-  console.log(pokemonData);
   return (
     <React.Fragment>
       {loading ? (
@@ -46,7 +45,7 @@ export default function PokemonList() {
               return <CustomCard key={key} pokemon={pokemon} />;
             })}
           </div>
-          <button className="home__button" onClick={myFunction}>
+          <button className="home__button" onClick={handleClick}>
             Load More
           </button>
         </div>

@@ -6,6 +6,7 @@ import "./App.css";
 import NavigationBar from "./components/navigation-bar";
 import PokemonList from "./pages/pokemon-list";
 import PokemonUser from "./pages/pokemon-user";
+import PokemonDetail from "./pages/pokemon-detail";
 
 const CustomContainer = styled.div`
   padding-top: 5rem;
@@ -22,7 +23,7 @@ export default function App() {
       <NavigationBar />
       <CustomContainer>
         <Switch>
-          <Route path="/pokemon-detail/:id" />
+          <Route path="/pokemon-detail/:id" component={PokemonDetail}/>
           <Route path="/user" component={PokemonUser}/>
           <Route path="/" component={PokemonList} />
         </Switch>

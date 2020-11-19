@@ -19,7 +19,7 @@ export default function NavigationBar() {
             <input className="input-search" placeholder="Find Pokemon" />
           </div>
           <div className="icon-section">
-            <i className="fa fa-heart ui-icon" aria-hidden="true"></i>
+            <Link to="/"><i className="fa fa-heart ui-icon" aria-hidden="true"></i></Link>
             <i className="fa fa-envelope ui-icon" aria-hidden="true"></i>
             <i className="fa fa-bell ui-icon" aria-hidden="true"></i>
           </div>
