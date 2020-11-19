@@ -1,12 +1,21 @@
 import * as React from "react";
 import { getData } from "../../services/pokemon-data";
+import {Link} from "react-router-dom";
 import "../../css/pokemon-detail.css";
+
 export default function PokemonDetail(props) {
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  const [save, setSave] = React.useState(false);
+  const sourceUrl = `https://pokeapi.co/api/v2/pokemon/${props.match.params.id}`;
+    const [key, setKey] = React.useState('');
+
+  const [store, setStore] = React.useState({
+    nickname: "",
+    url: sourceUrl,
+  });
 
   React.useEffect(() => {
-    const sourceUrl = `https://pokeapi.co/api/v2/pokemon/${props.match.params.id}`;
     async function fetchData() {
       let response = await getData(sourceUrl);
       setData(response);
@@ -14,7 +23,32 @@ export default function PokemonDetail(props) {
     }
     fetchData();
   }, [props]);
-  console.log(data);
+
+  const catchClick = () => {
+    const min = 1;
+    const max = 3;
+    const random = Math.floor(min + Math.random() * (max - min));
+    console.log(random);
+    if (random === 1) {
+      alert("Pokemon Escape!");
+    } else {
+      alert("You Catch a Pokemon!");
+      setSave(true);
+    }
+  };
+
+  const handleChange = (event) => {
+    setKey(event.target.value);
+    setStore({ ...store, [event.target.name]: event.target.value });
+
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.localStorage.setItem(key, JSON.stringify(store));
+    
+  };
+
   return (
     <React.Fragment>
       {loading ? (
@@ -37,9 +71,26 @@ export default function PokemonDetail(props) {
                 />
               </div>
               <div>
-                <button className="detail__button">Catch With Your Poke Ball!</button>
+                <button className="detail__button" onClick={catchClick}>
+                  Catch With Your Poke Ball!
+                </button>
               </div>
             </div>
+            {save ? (
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  id=""
+                  name="nickname"
+                  value={key}
+                  onChange={handleChange}
+                />
+                <button type="submit">Submit</button>
+              </form>
+            ) : (
+              ""
+            )}
+
             <div className="detail__contentSection">
               <div className="detail__content">
                 <h4 className="detail__contentTitle">Name</h4>
@@ -72,23 +123,22 @@ export default function PokemonDetail(props) {
               </div>
             </div>
           </div>
-          
+
           <div className="detail__content detail__content--center">
-                <h3 className="detail__contentTitle detail__contentTitle--center">Pokemon Move List</h3>
-                
-                <div className="detail__row">
-                  {data.moves.map((move, key) => {
-                    return (
-                      <span
-                        className="detail__desc detail__desc--move"
-                        key={key}
-                      >
-                        {move.move.name}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
+            <h3 className="detail__contentTitle detail__contentTitle--center">
+              Pokemon Move List
+            </h3>
+
+            <div className="detail__row">
+              {data.moves.map((move, key) => {
+                return (
+                  <span className="detail__desc detail__desc--move" key={key}>
+                    {move.move.name}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
         </div>
       )}
     </React.Fragment>
