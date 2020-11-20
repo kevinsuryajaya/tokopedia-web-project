@@ -19,7 +19,7 @@ export default function NavigationBar() {
             <input className="input-search" placeholder="Find Pokemon" />
           </div>
           <div className="icon-section">
-            <Link to="/"><i className="fa fa-heart ui-icon" aria-hidden="true"></i></Link>
+            <i className="fa fa-heart ui-icon" aria-hidden="true"></i>
             <i className="fa fa-envelope ui-icon" aria-hidden="true"></i>
             <i className="fa fa-bell ui-icon" aria-hidden="true"></i>
           </div>
@@ -31,10 +31,10 @@ export default function NavigationBar() {
           </button>
           <div className="nav-collapse">
             <span className="navbar-link">
-              <Link to="/user">
+              <Link to="/my-pokemon">
                 <div onClick={() => setToggle(false)}>
                 <img src={test} alt="Avatar" className="avatar" />
-                <span>Kevin Suryajaya</span>
+                <span>Pokemon Trainer</span>
                 </div>
               </Link>
             </span>
