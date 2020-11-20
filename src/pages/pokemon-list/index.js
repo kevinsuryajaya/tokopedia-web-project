@@ -21,6 +21,7 @@ export default function PokemonList() {
   const handleClick = async () => {
     let data = await getAllData(sourceUrl);
     await loadingData(data.results);
+
   };
 
   const loadingData = async (data) => {
@@ -40,6 +41,7 @@ export default function PokemonList() {
         <h1>Loading..</h1>
       ) : (
         <div className="home">
+        <h2 className="home__title">Pokemon List</h2>
           <div className="home__section">
             {pokemonData.map((pokemon, key) => {
               return <CustomCard key={key} pokemon={pokemon} />;

@@ -1,22 +1,22 @@
 import * as React from "react";
 import { getData } from "../../services/pokemon-data";
-import {Link} from "react-router-dom";
 import "../../css/pokemon-detail.css";
 
 export default function PokemonDetail(props) {
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
-  const [save, setSave] = React.useState(false);
-  const sourceUrl = `https://pokeapi.co/api/v2/pokemon/${props.match.params.id}`;
-    const [key, setKey] = React.useState('');
-
+  const [toggle, setToggle] = React.useState(false);
+  const [check, setCheck] = React.useState(false);
+  const [key, setKey] = React.useState("");
   const [store, setStore] = React.useState({
     nickname: "",
-    url: sourceUrl,
+    pokemon: "",
+    image_url: "",
   });
 
   React.useEffect(() => {
     async function fetchData() {
+      const sourceUrl = `https://pokeapi.co/api/v2/pokemon/${props.match.params.id}`;
       let response = await getData(sourceUrl);
       setData(response);
       setLoading(false);
@@ -32,21 +32,28 @@ export default function PokemonDetail(props) {
     if (random === 1) {
       alert("Pokemon Escape!");
     } else {
-      alert("You Catch a Pokemon!");
-      setSave(true);
+      setToggle(!toggle);
     }
   };
 
   const handleChange = (event) => {
     setKey(event.target.value);
-    setStore({ ...store, [event.target.name]: event.target.value });
-
+    setStore({
+      ...store,
+      pokemon: data.name,
+      nickname: event.target.value,
+      image_url: data.sprites.front_default,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.localStorage.setItem(key, JSON.stringify(store));
-    
+    if (window.localStorage.getItem(key) === null) {
+      window.localStorage.setItem(key, JSON.stringify(store));
+      setToggle(false);
+    } else if (window.localStorage.getItem(key) !== null) {
+      setCheck(true);
+    }
   };
 
   return (
@@ -67,7 +74,7 @@ export default function PokemonDetail(props) {
                 <img
                   className="detail__image"
                   src={data.sprites.front_default}
-                  alt=""
+                  alt="pokemon"
                 />
               </div>
               <div>
@@ -76,27 +83,35 @@ export default function PokemonDetail(props) {
                 </button>
               </div>
             </div>
-            {save ? (
+            <div id={toggle === true ? "open" : ""} className="modal">
               <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  id=""
-                  name="nickname"
-                  value={key}
-                  onChange={handleChange}
-                />
-                <button type="submit">Submit</button>
+                <div className="modal__content">
+                  <div className="modal__header">
+                    <h2>You Catch a Pokemon!</h2>
+                  </div>
+                  <div className="modal__body">
+                    <p>Give a Pokemon Nickname:</p>
+                    <input
+                      type="text"
+                      id=""
+                      name="nickname"
+                      value={key}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  {check ? <p className="modal__check">Nickname already exist</p> : ""}
+                  <div class="modal__footer">
+                    <button type="submit">Submit</button>
+                  </div>
+                </div>
               </form>
-            ) : (
-              ""
-            )}
-
+            </div>
             <div className="detail__contentSection">
               <div className="detail__content">
                 <h4 className="detail__contentTitle">Name</h4>
                 <span className="detail__name">{data.name}</span>
               </div>
-
               <div className="detail__content">
                 <h4 className="detail__contentTitle">Type</h4>{" "}
                 {data.types.map((type, key) => {
@@ -107,7 +122,6 @@ export default function PokemonDetail(props) {
                   );
                 })}
               </div>
-
               <div className="detail__content">
                 <h4 className="detail__contentTitle">Ability</h4>{" "}
                 {data.abilities.map((ability, key) => {
@@ -123,12 +137,10 @@ export default function PokemonDetail(props) {
               </div>
             </div>
           </div>
-
           <div className="detail__content detail__content--center">
             <h3 className="detail__contentTitle detail__contentTitle--center">
               Pokemon Move List
             </h3>
-
             <div className="detail__row">
               {data.moves.map((move, key) => {
                 return (
