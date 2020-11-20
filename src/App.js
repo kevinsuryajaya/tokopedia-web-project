@@ -4,17 +4,18 @@ import styled from "styled-components";
 import "./App.css";
 
 import NavigationBar from "./components/navigation-bar";
+import MobileNavigation from "./components/mobile-navigation";
 import PokemonList from "./pages/pokemon-list";
-import PokemonUser from "./pages/pokemon-user";
+import MyPokemon from "./pages/my-pokemon";
 import PokemonDetail from "./pages/pokemon-detail";
 
 const CustomContainer = styled.div`
   padding-top: 5rem;
-  margin-bottom:3rem;
+  margin-bottom: 5rem;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export default function App() {
@@ -23,11 +24,12 @@ export default function App() {
       <NavigationBar />
       <CustomContainer>
         <Switch>
-          <Route path="/pokemon-detail/:id" component={PokemonDetail}/>
-          <Route path="/user" component={PokemonUser}/>
-          <Route path="/" component={PokemonList} />
+          <Route path="/pokemon-detail/:id" component={PokemonDetail} />
+          <Route path="/my-pokemon" component={MyPokemon} />
+          <Route exact path="/" component={PokemonList} />
         </Switch>
       </CustomContainer>
+      <MobileNavigation />
     </Router>
   );
 }
