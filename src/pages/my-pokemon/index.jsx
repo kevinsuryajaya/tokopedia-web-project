@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { allStorage } from "../../services/pokemon-localStorage";
 import test from "../../assets/images/profile.jpg";
@@ -14,6 +14,11 @@ const CustomLink = styled(Link)`
     text-decoration: none;
     color: #ffffff;
   }
+`;
+
+const CustomText = styled.p`
+  padding:10px;
+  text-align: center;
 `;
 
 export default function MyPokemon() {
@@ -56,19 +61,10 @@ export default function MyPokemon() {
             })}
           </div>
         ) : (
-          <h1>You don't have a Pokemon.</h1>
+          <CustomText>You don't have a Pokemon. Try catch a Pokemon by tap/click the pokemon on Pokemon List Page</CustomText>
+          
         )}
 
-        <div className="user__footer">
-          <button
-            className="user__button"
-            onClick={() => {
-              localStorage.clear();
-            }}
-          >
-            <CustomLink to="/my-pokemon">Release All</CustomLink>
-          </button>
-        </div>
       </div>
     </React.Fragment>
   );

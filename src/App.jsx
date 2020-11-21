@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import "./App.css";
 
 import NavigationBar from "./components/navigation-bar";

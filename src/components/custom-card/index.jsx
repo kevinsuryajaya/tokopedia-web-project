@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { allStorage } from "../../services/pokemon-localStorage";
 import "../../css/custom-card.css";

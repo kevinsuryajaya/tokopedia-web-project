@@ -33,7 +33,7 @@
   border: 1px solid;
   border-radius: 10px;
   text-align: center;
-  grid-column: span 2;
+  grid-column: span 6;
 }
 .user__pokemonImage {
   background-color: #0a141e;
@@ -59,9 +59,9 @@
   margin: 10px 0px;
 }
 
-@media (max-width: 800px) {
+@media (min-width: 1300px) {
   .user__column {
-    grid-column: span 6;
+    grid-column: span 2;
   }
 }
 
