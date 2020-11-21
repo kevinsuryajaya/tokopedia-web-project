@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { allStorage } from "../../services/pokemon-localStorage";
-import "../../css/card.css";
+import "../../css/custom-card.css";
 
 const CustomLink = styled(Link)`
   &:focus,
