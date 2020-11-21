@@ -10,7 +10,7 @@ export default function NavigationBar() {
     <React.Fragment>
       <nav className={toggle === true ? "open" : ""}>
         <div className="navigation">
-          <Link to="/">
+         <Link to="/">
             <div className="nav-brand">Pokemon Project</div>
           </Link>
           {/* This is only for better UI */}
@@ -30,11 +30,19 @@ export default function NavigationBar() {
             <span></span>
           </button>
           <div className="nav-collapse">
+          <span className="navbar-link">
+              <Link to="/my-pokemon">
+                <div onClick={() => setToggle(false)}>
+                <i className="fa fa-home" aria-hidden="true"></i>
+                <span>Pokemon List</span>
+                </div>
+              </Link>
+            </span>
             <span className="navbar-link">
               <Link to="/my-pokemon">
                 <div onClick={() => setToggle(false)}>
                 <img src={test} alt="Avatar" className="avatar" />
-                <span>Pokemon Trainer</span>
+                <span>My Pokemon</span>
                 </div>
               </Link>
             </span>
