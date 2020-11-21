@@ -22,6 +22,10 @@ export default function NavigationBar() {
             <i className="fa fa-heart ui-icon" aria-hidden="true"></i>
             <i className="fa fa-envelope ui-icon" aria-hidden="true"></i>
             <i className="fa fa-bell ui-icon" aria-hidden="true"></i>
+            <Link className="desktop-link" to="/my-pokemon">
+            <i className="fa fa-user ui-icon" aria-hidden="true"></i>
+            <span>My Pokemon</span>
+            </Link>
           </div>
           {/* // */}
           <button className="toggler" onClick={() => setToggle(!toggle)}>

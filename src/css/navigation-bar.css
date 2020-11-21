@@ -121,6 +121,8 @@ nav.open {
   margin-left: 1rem;
 }
 
+
+
 .avatar {
   object-fit: cover;
   vertical-align: middle;
@@ -130,6 +132,9 @@ nav.open {
   margin-right: 10px;
 }
 
+.desktop-link{
+  display: none;
+}
 
 @media (min-width:1300px){
   .input-search{
@@ -143,6 +148,17 @@ nav.open {
     font-weight: 600;
     color: #ffffff;
     margin-right: 10px;
+  }
+
+  .desktop-link{
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .desktop-link span{
+    margin-left: 5px;
   }
 }
 
