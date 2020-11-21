@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Documentation
+- Build an web apps to play Pokemon Games.
+- UI/UX created Mobile-First, so recommend to access with mobile device.
+- It's a single page application
+- use resource from pokeapi.co
+- have 3 pages, Pokemon List(Home) Page, Pokemon Detail Page, My Pokemon(Profile) Page.
+
+# References Code and Source to Build This Web Apps
+- www.w3schools.com
+
 ## Available Scripts
 
 In the project directory, you can run:
