@@ -25,7 +25,7 @@
 }
 
 .detail__contentSection{
-    grid-column: span 6;
+    grid-column: span 12;
 }
 
 .detail__content{
@@ -33,7 +33,7 @@
 }
 
 .detail__image{
-    width: 25rem;
+    width: 15rem;
 }
 
 .detail__button{
@@ -104,6 +104,7 @@
     background-color: #80c7fd;
     color: #ffffff;
     padding: 5px;
+    grid-column: span 4;
 }
 
 .detail__type:hover{
@@ -190,18 +191,14 @@
     color: white;
   }
 
-
-@media (max-width:1000px){
+@media (min-width:1300px){
     .detail__contentSection{
-        grid-column: span 12;
+        grid-column: span 6;
     }
-}
-
-@media (max-width:650px){
     .detail__image{
-        width: 15rem;
+        width: 25rem;
     }
     .detail__desc--move{
-        grid-column: span 4;
+        grid-column: span 2;
     }
 }
