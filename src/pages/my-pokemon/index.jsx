@@ -17,7 +17,7 @@ const CustomLink = styled(Link)`
 `;
 
 const CustomText = styled.p`
-  padding:10px;
+  padding: 10px;
   text-align: center;
 `;
 
@@ -61,10 +61,11 @@ export default function MyPokemon() {
             })}
           </div>
         ) : (
-          <CustomText>You don't have a Pokemon. Try catch a Pokemon by tap/click the pokemon on Pokemon List Page</CustomText>
-          
+          <CustomText>
+            You don't have a Pokemon. Try catch a Pokemon by tap/click the
+            pokemon on Pokemon List Page
+          </CustomText>
         )}
-
       </div>
     </React.Fragment>
   );

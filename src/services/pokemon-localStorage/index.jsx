@@ -6,6 +6,5 @@ export function allStorage() {
   while (i--) {
     values.push(JSON.parse(window.localStorage.getItem(keys[i])));
   }
-
   return values;
 }

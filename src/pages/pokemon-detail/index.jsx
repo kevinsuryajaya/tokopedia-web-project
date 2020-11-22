@@ -28,7 +28,6 @@ export default function PokemonDetail(props) {
     const min = 1;
     const max = 3;
     const random = Math.floor(min + Math.random() * (max - min));
-    console.log(random);
     if (random === 1) {
       alert("Pokemon Escape!");
     } else {
@@ -100,7 +99,11 @@ export default function PokemonDetail(props) {
                       required
                     />
                   </div>
-                  {check ? <p className="modal__check">Nickname already exist</p> : ""}
+                  {check ? (
+                    <p className="modal__check">Nickname already exist</p>
+                  ) : (
+                    ""
+                  )}
                   <div class="modal__footer">
                     <button type="submit">Submit</button>
                   </div>

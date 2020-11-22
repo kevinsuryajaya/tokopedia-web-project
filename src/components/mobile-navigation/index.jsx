@@ -9,7 +9,7 @@ export default function MobileNavigation() {
         <li className="mobile__tab">
           <Link className="mobile__navigation" to="/">
             <i className="mobile__logo fa fa-home" aria-hidden="true"></i>
-            <p className="mobile__title">Home</p>
+            <p className="mobile__title">Pokemon List</p>
           </Link>
         </li>
         <li className="mobile__tab">

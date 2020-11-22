@@ -38,8 +38,8 @@
   font-size: 12px;
 }
 
-@media (min-width:1300px){
-  .card{
+@media (min-width: 1300px) {
+  .card {
     grid-column: span 2;
   }
 }

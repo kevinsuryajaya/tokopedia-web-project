@@ -10,7 +10,7 @@ export default function NavigationBar() {
     <React.Fragment>
       <nav className={toggle === true ? "open" : ""}>
         <div className="navigation">
-         <Link to="/">
+          <Link to="/">
             <div className="nav-brand">Pokemon Project</div>
           </Link>
           {/* This is only for better UI */}
@@ -23,8 +23,8 @@ export default function NavigationBar() {
             <i className="fa fa-envelope ui-icon" aria-hidden="true"></i>
             <i className="fa fa-bell ui-icon" aria-hidden="true"></i>
             <Link className="desktop-link" to="/my-pokemon">
-            <i className="fa fa-user ui-icon" aria-hidden="true"></i>
-            <span>My Pokemon</span>
+              <i className="fa fa-user ui-icon" aria-hidden="true"></i>
+              <span>My Pokemon</span>
             </Link>
           </div>
           {/* // */}
@@ -34,19 +34,19 @@ export default function NavigationBar() {
             <span></span>
           </button>
           <div className="nav-collapse">
-          <span className="navbar-link">
+            <span className="navbar-link">
               <Link to="/my-pokemon">
                 <div onClick={() => setToggle(false)}>
-                <i className="fa fa-home" aria-hidden="true"></i>
-                <span>Pokemon List</span>
+                  <i className="fa fa-home" aria-hidden="true"></i>
+                  <span>Pokemon List</span>
                 </div>
               </Link>
             </span>
             <span className="navbar-link">
               <Link to="/my-pokemon">
                 <div onClick={() => setToggle(false)}>
-                <img src={test} alt="Avatar" className="avatar" />
-                <span>My Pokemon</span>
+                  <img src={test} alt="Avatar" className="avatar" />
+                  <span>My Pokemon</span>
                 </div>
               </Link>
             </span>

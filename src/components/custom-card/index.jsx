@@ -31,7 +31,7 @@ export default function CustomCard({ pokemon }) {
             <img
               className="card__image"
               src={pokemon.sprites.front_default}
-              alt=""
+              alt="pokemon"
             />
             <div className="card__content">
               <div className="card__header">{pokemon.name}</div>
