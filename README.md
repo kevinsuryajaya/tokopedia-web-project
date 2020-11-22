@@ -3,16 +3,21 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Documentation
-- Build an web apps to play Pokemon Games with React JS.
-- UI/UX created Mobile-First, so recommend to access with mobile device.
-- It's a single page application
-- use resource from pokeapi.co
-- have 3 pages, Pokemon List(Home) Page, Pokemon Detail Page, My Pokemon(Profile) Page.
+- Build an web app to play Pokemon Games with React Hooks.
+- UI/UX design Mobile-First, so recommend to access with mobile device.
+- Use API from https://pokeapi.co/
+- It's a single page application.
+- This web app have 3 pages, Pokemon List(Home) Page, Pokemon Detail Page, My Pokemon(Profile) Page.
+- Deployed using heroku, you can check the web app on this link: https://pokemon-web-project.herokuapp.com/
 
-# References Code and Source to Build This Web Apps
-- www.tokopedia.com (mobile and dekstop version)
-- www.w3schools.com
+# References Code and Knowledge to Build This Web App
+- https://reactjs.org/docs/hooks-intro.html
+- https://pokeapi.co/
+- https://www.tokopedia.com/ (mobile and dekstop version)
+- https://id.portal-pokemon.com/play/pokedex
+- https://www.w3schools.com/
 - https://emotion.sh/
+- https://www.heroku.com/
 
 
 ## Available Scripts
